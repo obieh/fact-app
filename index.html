@@ -6,24 +6,15 @@
     <title>Fact Applet</title>
   </head>
   <body>
-    <h1>Welcome to the Fact Applet</h1>
-    <p>Click the button below to see a random fact!</p>
-    <button id="factButton">Get Random Fact</button>
-    <p id="factDisplay"></p>
+    <h1>Welcome to fact applet.</h1>
 
-    <script>
-      const facts = [
-        "Honey never spoils.",
-        "Bananas are berries, but strawberries aren't.",
-        "A group of flamingos is called a 'flamboyance'.",
-        "Octopuses have three hearts.",
-        "The Eiffel Tower can be 15 cm taller during the summer.",
-      ];
-
-      document.getElementById("factButton").addEventListener("click", () => {
-        const randomIndex = Math.floor(Math.random() * facts.length);
-        document.getElementById("factDisplay").innerText = facts[randomIndex];
-      });
-    </script>
+    <ul>
+      <li>
+        <p>
+          Reat was developed by Meta (formerly facebook)
+          <span>#Technology</span>
+        </p>
+      </li>
+    </ul>
   </body>
 </html>
