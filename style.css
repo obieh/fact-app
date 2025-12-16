@@ -1,5 +1,19 @@
 h1 {
-  font-size: 42;
+  font-size: 40;
   text-transform: uppercase;
-  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.4;
+  font-family: sans-serif;
+}
+
+span {
+  text-transform: uppercase;
+  font-size: 14;
+}
+
+ul {
+  list-style: none;
 }
