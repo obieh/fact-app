@@ -45,6 +45,9 @@ p {
   text-transform: uppercase;
   font-size: 14;
   font-family: "coiny", sans-serif;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10;
 }
 
 ul {
