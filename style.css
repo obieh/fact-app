@@ -27,23 +27,21 @@ p {
 
 .fact-form {
   background-color: #44403c;
-  margin-bottom: 49px;
+  margin-bottom: 40px;
 }
 
 .fact {
   font-size: 20px;
   line-height: 1.4;
   font-family: "sono", sans-serif;
-  color: #fafaf9;
   background-color: #44403c;
+  margin-bottom: 16px;
 }
 
 .tag {
   text-transform: uppercase;
   font-size: 14;
   font-family: "coiny", sans-serif;
-  color: #f2f2f0;
-  background-color: #44403c;
 }
 
 ul {
