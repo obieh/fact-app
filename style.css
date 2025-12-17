@@ -1,8 +1,13 @@
+body {
+  background-color: #292524;
+}
+
 h1 {
   font-size: 40;
   text-transform: uppercase;
   text-align: center;
-  font-family: coiny, cursive;
+  font-family: "coiny", sans-serif;
+  color: #f1f2f5;
 }
 
 p {
@@ -10,13 +15,29 @@ p {
   line-height: 1.4;
   font-family: "sono" sans-serif;
 }
+.fact-form {
+  background-color: #d4c3b2;
+}
+
+.fact {
+  font-size: 20px;
+  line-height: 1.4;
+  font-family: "sono", sans-serif;
+  color: #f1f2f5;
+}
 
 .tag {
   text-transform: uppercase;
   font-size: 14;
   font-family: "coiny", sans-serif;
+  color: #f1f2f5;
+  background-color: #44403c;
 }
 
 ul {
   list-style: none;
+}
+
+.class-form {
+  background-color: #44403c;
 }
