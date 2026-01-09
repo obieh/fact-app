@@ -18,6 +18,12 @@ body {
   justify-content: space-between;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 h1 {
   font-size: 40;
   text-transform: uppercase;
