@@ -86,6 +86,20 @@ ul {
   list-style: none;
 }
 
+.source:link,
+.source:visited {
+  color: brown;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: 0.3s;
+}
+
+.source:hover,
+.source:active {
+  text-decoration: underline;
+  color: rgb(77, 77, 220);
+}
+
 .class-form {
   background-color: #44403c;
 }
