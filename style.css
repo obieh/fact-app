@@ -8,7 +8,7 @@ body {
   background-color: #292524;
   color: #fafaf9;
   font-family: "sono", sans-serif;
-  padding: 40px;
+  padding: 38px 54px;
 }
 
 .header {
@@ -36,6 +36,11 @@ h1 {
   gap: 48px;
 }
 
+.container {
+  max-width: 1000px;
+  /*background-color: ;*/
+  margin: 0 auto;
+}
 
 p {
   font-size: 20px;
