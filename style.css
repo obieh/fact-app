@@ -24,6 +24,11 @@ body {
   gap: 16px;
 }
 
+.logo img {
+  width: 68px;
+  height: 68px;
+}
+
 h1 {
   font-size: 40;
   text-transform: uppercase;
@@ -69,6 +74,12 @@ p {
   padding-top: 3px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.vote-buttons {
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
 }
 
 ul {
