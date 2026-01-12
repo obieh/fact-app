@@ -58,7 +58,7 @@ p {
   margin-bottom: 40px;
   padding: 16px 32px;
   align-items: center;
-  display: grid;
+  display: flex;
   gap: 16px;
 }
 
@@ -165,14 +165,13 @@ ul {
 
 .fact-form input,
 .fact-form select {
-  width: 100%;
+  max-width: 220px;
   padding: 12px 16px;
   margin-bottom: 16px;
   border: none;
   border-radius: 80px;
-  font-size: 16px;
+  font-size: 18px;
   font-family: inherit;
-  outline: none;
 }
 
 .fact-form span {
