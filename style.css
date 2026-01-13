@@ -74,9 +74,17 @@ p {
   padding: 16px 24px;
   letter-spacing: -1px;
   border-radius: 16px;
+
   display: flex;
   align-items: center;
   gap: 24px;
+}
+
+@media (max-width: 1155px) {
+  .fact {
+    background-color: red;
+    flex-direction: column;
+  }
 }
 
 .tag {
