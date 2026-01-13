@@ -181,8 +181,8 @@ ul {
 
 .fact-form input:first-child {
   flex-grow: 1;
-  max-width: none;
 }
+
 .fact-form span {
   font-size: 14px;
   font-weight: 600;
