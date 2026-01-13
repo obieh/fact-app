@@ -8,7 +8,12 @@ body {
   background-color: #292524;
   color: #fafaf9;
   font-family: "sono", sans-serif;
-  padding: 38px 54px;
+  padding: 48px 64px;
+}
+
+container {
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .header {
@@ -41,12 +46,6 @@ h1 {
   gap: 48px;
 }
 
-.container {
-  max-width: 1000px;
-  /*background-color: ;*/
-  margin: 0 auto;
-}
-
 p {
   font-size: 20px;
   line-height: 1.4;
@@ -75,6 +74,9 @@ p {
   padding: 16px 24px;
   letter-spacing: -1px;
   border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .tag {
@@ -184,4 +186,5 @@ ul {
 .fact-form span {
   font-size: 14px;
   font-weight: 600;
+  margin-right: 18px;
 }
