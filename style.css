@@ -62,6 +62,32 @@ p {
   border-radius: 16px;
 }
 
+@media (max-width: 1000px) {
+  body {
+    padding: 32px 44px;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .fact-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fact-form input,
+  .fact-form select {
+    width: 100%;
+  }
+}
+
 .category {
   margin-bottom: 16px;
 }
@@ -83,6 +109,8 @@ p {
 @media (max-width: 1155px) {
   .fact {
     flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
   }
 }
 
