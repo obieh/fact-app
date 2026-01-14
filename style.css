@@ -82,7 +82,6 @@ p {
 
 @media (max-width: 1155px) {
   .fact {
-    background-color: red;
     flex-direction: column;
   }
 }
