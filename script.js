@@ -49,6 +49,7 @@ const factList = document.querySelector(".fact-list");
 
 //Create DOM elements: Render facts in list
 factList.innerHTML = "";
+createFactsList(initialFacts);
 
 //Load data from supabase
 
@@ -67,14 +68,16 @@ factList.innerHTML = "";
   console.log(res);
 } 
 */
-const htmlArr = initialFacts.map(
-  (fact) => `<li class="fact">${fact.text}</li>`,
-);
+function createFactsList(dataArray) {
+  const htmlArr = initialFacts.map(
+    (fact) => `<li class="fact">${fact.text}
+  </li>`,
+  );
 
-console.log(htmlArr);
-const html = htmlArr.join("");
-factList.insertAdjacentHTML("afterbegin", html);
-
+  console.log(htmlArr);
+  const html = htmlArr.join("");
+  factList.insertAdjacentHTML("afterbegin", html);
+}
 //Toggle form visibility
 btnShare.addEventListener("click", function () {
   factForm.classList.toggle("hidden");
