@@ -30,6 +30,16 @@ const initialFacts = [
     votesFalse: 1,
     createdIn: 2015,
   },
+  {
+    id: 4,
+    text: "Obinna is the biggest fish ever to roll out from Rivers State",
+    source: "https://en.wikipedia.org/wiki/Obinna",
+    category: "society",
+    votesInteresting: 12,
+    votesMindblowing: 5,
+    votesFalse: 0,
+    createdIn: 2020,
+  },
 ];
 
 //Selcting DOM elements
@@ -42,9 +52,9 @@ factList.innerHTML = "";
 
 //Load data from supabase
 
-loadFacts();
+//loadFacts();
 
-async function loadFacts() {
+/*async function loadFacts() {
   const res = fetch("https://qlaezsnuyofisgboncnd.supabase.co/rest/v1/facts", {
     headers: {
       apikey:
@@ -55,12 +65,13 @@ async function loadFacts() {
   });
   const data = await res.json();
   console.log(res);
-}
-
+} 
+*/
 const htmlArr = initialFacts.map(
   (fact) => `<li class="fact">${fact.text}</li>`,
 );
-//console.log(htmlArr);
+
+console.log(htmlArr);
 const html = htmlArr.join("");
 factList.insertAdjacentHTML("afterbegin", html);
 
