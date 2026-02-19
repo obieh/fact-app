@@ -58,12 +58,7 @@ const btnShare = document.querySelector(".btn-share");
 const factForm = document.querySelector(".fact-form");
 const factList = document.querySelector(".fact-list");
 
-//Create DOM elements: Render facts in list
-factList.innerHTML = "";
-//createFactsList(initialFacts);
-
 //Load data from supabase
-
 loadFacts();
 
 async function loadFacts() {
@@ -81,7 +76,12 @@ async function loadFacts() {
       },
     );
     const data = await res.json();
-    createFactsList(data);
+    console.log("Fetched data:", data);
+    if (Array.isArray(data)) {
+      createFactsList(data);
+    } else {
+      console.error("Data is not an array:", data);
+    }
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -89,7 +89,10 @@ async function loadFacts() {
 
 //createFactsList(initialFacts);
 function createFactsList(dataArray) {
-  const htmlArr = initialFacts.map(
+  // Clear existing content first
+  factList.innerHTML = "";
+  
+  const htmlArr = dataArray.map(
     (fact) => `<li class="fact">
     <p> 
     ${fact.text}
