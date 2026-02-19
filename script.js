@@ -91,21 +91,29 @@ async function loadFacts() {
 function createFactsList(dataArray) {
   // Clear existing content first
   factList.innerHTML = "";
-  
-  const htmlArr = dataArray.map(
-    (fact) => `<li class="fact">
+
+  const htmlArr = dataArray.map((fact) => {
+    // Handle cases where properties might be undefined
+    const text = fact.text || "";
+    const source = fact.source || "#";
+    const category = fact.category || "unknown";
+    const categoryColor =
+      CATEGORIES.find((cat) => cat.name === category)?.color || "#999";
+
+    return `<li class="fact">
     <p> 
-    ${fact.text}
-    <a class="source" href="${fact.source}" target="_blank">(Source)</a>
+    ${text}
+    <a class="source" href="${source}" target="_blank">(Source)</a>
     </p>
-    <span class="tag" style="background-color: ${CATEGORIES.find((cat) => cat.name === fact.category).color}">
-    ${fact.category}
+    <span class="tag" style="background-color: ${categoryColor}">
+    ${category}
     </span>
-  </li>`,
-  );
+  </li>`;
+  });
 
   const html = htmlArr.join("");
   factList.insertAdjacentHTML("afterbegin", html);
+  console.log("Facts rendered:", htmlArr.length);
 }
 
 //Toggle form visibility
