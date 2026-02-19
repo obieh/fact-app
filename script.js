@@ -74,14 +74,21 @@ async function loadFacts() {
 //createFactsList(initialFacts);
 function createFactsList(dataArray) {
   const htmlArr = initialFacts.map(
-    (fact) => `<li class="fact">${fact.text}
+    (fact) => `<li class="fact">
+    <p> 
+    ${fact.text}
+    <a class="source" href="${fact.source}" target="_blank">(Source)</a>
+    </p>
+    <span class="tag" style="background-color: ${CATEGORIES.find((cat) => cat.name === fact.category).color}">
+    ${fact.category}
+    </span>
   </li>`,
   );
 
-  console.log(htmlArr);
   const html = htmlArr.join("");
   factList.insertAdjacentHTML("afterbegin", html);
 }
+
 //Toggle form visibility
 btnShare.addEventListener("click", function () {
   factForm.classList.toggle("hidden");
