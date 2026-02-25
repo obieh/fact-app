@@ -18,7 +18,7 @@ function App() {
 
       <NewFactForm />
 
-      <main class="main">
+      <main className="main">
         <CategoryFilter />
         <FactList />
       </main>
