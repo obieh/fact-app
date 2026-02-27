@@ -98,16 +98,16 @@ function FactList() {
     <section>
       <ul className="facts-list">
         {facts.map((fact) => (
-          <Fact />
+          <Fact key={fact.id} fact={fact} />
         ))}
       </ul>
     </section>
   );
 }
 
-function Fact() {
+function Fact({ fact }) {
   return (
-    <li key={fact.id} className="fact">
+    <li className="fact">
       <p>
         {fact.text}
         <a className="source" target="blank" href={fact.source}>
