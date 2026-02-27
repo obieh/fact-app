@@ -101,6 +101,7 @@ function FactList() {
           <Fact key={fact.id} fact={fact} />
         ))}
       </ul>
+      <p>There are {facts.length} facts in the database, add your own!</p>
     </section>
   );
 }
