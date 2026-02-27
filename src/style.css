@@ -175,16 +175,6 @@ ul {
   color: rgb(77, 77, 220);
 }
 
-.class-form {
-  background-color: #44403c;
-  margin-bottom: 40px;
-  padding: 16px 32px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  border-radius: 16px;
-}
-
 .btn {
   border: none;
   font-family: "Coiny", sans-serif;
