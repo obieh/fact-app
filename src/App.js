@@ -48,7 +48,9 @@ function Counter() {
   return (
     <div>
       <span style={{ fontsize: "40px" }}>0</span>
-      <button className="btn btn-large">+1</button>
+      <button className="btn btn-large" onClick={() => console.log("clicked")}>
+        +1
+      </button>
     </div>
   );
 }
