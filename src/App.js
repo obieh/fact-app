@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./style.css";
 
 const initialFacts = [
@@ -45,10 +46,12 @@ const initialFacts = [
 ];
 
 function Counter() {
+  const [count, setCount] = useState(0);
+
   return (
     <div>
-      <span style={{ fontsize: "40px" }}>0</span>
-      <button className="btn btn-large" onClick={() => console.log("clicked")}>
+      <span style={{ fontsize: "40px" }}>{count}</span>
+      <button className="btn btn-large" onClick={() => setCount(count + 1)}>
         +1
       </button>
     </div>
