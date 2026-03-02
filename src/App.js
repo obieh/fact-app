@@ -48,24 +48,9 @@ const initialFacts = [
 function App() {
   const [showForm, setShowForm] = useState(false);
 
-  const appTitle = "Welcome to fact-applet";
-
   return (
     <>
-      {/* Header */}
-      <header className="header">
-        <div className="logo">
-          <img src="logo.png" height="58" width="58" alt="logo" />
-          <h1>{appTitle}</h1>
-        </div>
-
-        <button
-          className="btn btn-large btn-share btn-open"
-          onClick={() => setShowForm((show) => !show)}
-        >
-          Share a fact
-        </button>
-      </header>
+      <Header setShowForm={setShowForm} />
 
       {showForm ? <NewFactForm /> : null}
 
@@ -74,6 +59,26 @@ function App() {
         <FactList />
       </main>
     </>
+  );
+}
+
+function Header({setShowForm}) {
+  const appTitle = "Welcome to fact-applet";
+  
+  return (
+    <header className="header">
+      <div className="logo">
+        <img src="logo.png" height="58" width="58" alt="logo" />
+        <h1>{appTitle}</h1>
+      </div>
+
+      <button
+        className="btn btn-large btn-share btn-open"
+        onClick={() => setShowForm((show) => !show)}
+      >
+        Share a fact
+      </button>
+    </header>
   );
 }
 
