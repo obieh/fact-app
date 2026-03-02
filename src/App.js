@@ -44,6 +44,15 @@ const initialFacts = [
   },
 ];
 
+function Counter() {
+  return (
+    <div>
+      <span style={{ fontsize: "40px" }}>0</span>
+      <button className="btn btn-large">+1</button>
+    </div>
+  );
+}
+
 function App() {
   const appTitle = "Welcome to fact-applet";
 
@@ -61,6 +70,7 @@ function App() {
         </button>
       </header>
 
+      <Counter />
       <NewFactForm />
 
       <main className="main">
