@@ -87,7 +87,23 @@ function NewFactForm() {
 }
 
 function CategoryFilter() {
-  return <aside>Category filter</aside>;
+  return (
+    <aside>
+      <ul>
+        <li className="category">
+          <button class="btn btn-all-categories">All</button>
+        </li>
+        <li className="category">
+          <button
+            className="btn btn-category"
+            style={{ backgroundColor: "#3b82f6" }}
+          >
+            Technology
+          </button>
+        </li>
+      </ul>
+    </aside>
+  );
 }
 
 function FactList() {
