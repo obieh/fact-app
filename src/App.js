@@ -50,7 +50,7 @@ function App() {
 
   return (
     <>
-      <Header setShowForm={setShowForm} />
+      <Header showForm={showForm} setShowForm={setShowForm} />
 
       {showForm ? <NewFactForm /> : null}
 
@@ -62,9 +62,9 @@ function App() {
   );
 }
 
-function Header({setShowForm}) {
+function Header({ showForm, setShowForm }) {
   const appTitle = "Welcome to fact-applet";
-  
+
   return (
     <header className="header">
       <div className="logo">
@@ -76,7 +76,7 @@ function Header({setShowForm}) {
         className="btn btn-large btn-share btn-open"
         onClick={() => setShowForm((show) => !show)}
       >
-        Share a fact
+        {showForm ? "Close" : "Share a fact"}
       </button>
     </header>
   );
