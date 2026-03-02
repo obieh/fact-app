@@ -45,20 +45,9 @@ const initialFacts = [
   },
 ];
 
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div>
-      <span style={{ fontsize: "40px" }}>{count}</span>
-      <button className="btn btn-large" onClick={() => setCount(count + 1)}>
-        +1
-      </button>
-    </div>
-  );
-}
-
 function App() {
+const [showForm, setShowForm] = useState(false);
+
   const appTitle = "Welcome to fact-applet";
 
   return (
@@ -75,8 +64,8 @@ function App() {
         </button>
       </header>
 
-      <Counter />
-      <NewFactForm />
+     {showForm ? <NewFactForm /> : null} 
+
 
       <main className="main">
         <CategoryFilter />
