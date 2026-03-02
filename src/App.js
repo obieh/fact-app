@@ -46,7 +46,7 @@ const initialFacts = [
 ];
 
 function App() {
-const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   const appTitle = "Welcome to fact-applet";
 
@@ -59,13 +59,15 @@ const [showForm, setShowForm] = useState(false);
           <h1>{appTitle}</h1>
         </div>
 
-        <button className="btn btn-large btn-share btn-open">
+        <button
+          className="btn btn-large btn-share btn-open"
+          onClick={() => setShowForm((show) => !show)}
+        >
           Share a fact
         </button>
       </header>
 
-     {showForm ? <NewFactForm /> : null} 
-
+      {showForm ? <NewFactForm /> : null}
 
       <main className="main">
         <CategoryFilter />
