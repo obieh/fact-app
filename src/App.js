@@ -94,7 +94,7 @@ function NewFactForm() {
         <option value="science">Science</option>
         <option value="finance">Finance</option>
       </select>
-      <button class="btn btn-large" type="submit">
+      <button className="btn btn-large" type="submit">
         Submit
       </button>
     </form>
