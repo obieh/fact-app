@@ -94,9 +94,18 @@ const CATEGORIES = [
 ];
 
 function NewFactForm() {
+  const [text, setText] = useState("");
+  const [source, setSource] = useState("");
+  const [category, setCategory] = useState("");
+
   return (
     <form className="fact-form">
-      <input type="text" placeholder="share a fact with the world" />
+      <input
+        type="text"
+        placeholder="share a fact with the world"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
       <span>100</span>
       <input type="text" placeholder="trust worthy source" />
       <select>
