@@ -101,9 +101,11 @@ function NewFactForm() {
       <input type="text" placeholder="trust worthy source" />
       <select>
         <option value="select-category">Select Category:</option>
-        <option value="technology">Technology</option>
-        <option value="science">Science</option>
-        <option value="finance">Finance</option>
+        {CATEGORIES.map((cat) => (
+          <option key={cat.name} value={cat.name}>
+            {cat.name.toUpperCase()}
+          </option>
+        ))}
       </select>
       <button className="btn btn-large" type="submit">
         Submit
