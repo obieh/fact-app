@@ -107,7 +107,12 @@ function NewFactForm() {
         onChange={(e) => setText(e.target.value)}
       />
       <span>100</span>
-      <input type="text" placeholder="trust worthy source" />
+      <input
+        value={source}
+        type="text"
+        placeholder="trust worthy source"
+        onChange={(e) => setSource(e.target.value)}
+      />
       <select>
         <option value="select-category">Select Category:</option>
         {CATEGORIES.map((cat) => (
