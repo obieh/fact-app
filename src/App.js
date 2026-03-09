@@ -101,10 +101,9 @@ function NewFactForm() {
   const textLength = text.length;
 
   function handleSubmit(e) {
+    //
+
     e.preventDefault();
-    if (text && source && category && textLength <= 300) {
-      // Handle form submission here
-    }
   }
 
   return (
