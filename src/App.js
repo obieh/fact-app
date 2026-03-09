@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./style.css";
+export default App;
 
 const initialFacts = [
   {
@@ -99,8 +100,15 @@ function NewFactForm() {
   const [category, setCategory] = useState("");
   const textLength = text.length;
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (text && source && category && textLength <= 300) {
+      // Handle form submission here
+    }
+  }
+
   return (
-    <form className="fact-form">
+    <form className="fact-form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="share a fact with the world"
@@ -195,5 +203,5 @@ function Fact({ fact }) {
   );
 }
 
-export default App;
+//                 export default App;
 //
