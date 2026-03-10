@@ -53,11 +53,11 @@ function App() {
   return (
     <>
       <Header showForm={showForm} setShowForm={setShowForm} />
-      {showForm ? <NewFactForm /> : null}
+      {showForm ? <NewFactForm setFacts={setFacts} /> : null}
 
       <main className="main">
         <CategoryFilter />
-        <FactList />
+        <FactList facts={facts} />
       </main>
     </>
   );
@@ -110,7 +110,7 @@ function isValidHttpUrl(string) {
   return url.protocol === "http:" || url.protocol === "https:";
 }
 
-function NewFactForm() {
+function NewFactForm({ setFacts }) {
   const [text, setText] = useState("");
   const [source, setSource] = useState("http://example.com");
   const [category, setCategory] = useState("");
@@ -133,9 +133,12 @@ function NewFactForm() {
         votesFalse: 0,
         createdIn: new Date().getFullYear(),
         //add the new fact to the UI: add the fact to state
+        setFacts((facts) => [newFact, ...facts]);
 
         //reset input fields
-
+        setText("");
+        setSource("");
+        setCategory("");  
         //close the form
       };
 
@@ -195,9 +198,7 @@ function NewFactForm() {
       );
     }
 
-    function FactList() {
-      // Temporary data until we fetch from Supabase
-
+    function FactList({ facts }) {
       return (
         <section>
           <ul className="facts-list">
