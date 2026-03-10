@@ -53,7 +53,9 @@ function App() {
   return (
     <>
       <Header showForm={showForm} setShowForm={setShowForm} />
-      {showForm ? <NewFactForm setFacts={setFacts} /> : null}
+      {showForm ? (<NewFactForm setFacts={setFacts}
+      setShowForm={setShowForm} /> ) : null}
+      
 
       <main className="main">
         <CategoryFilter />
@@ -110,7 +112,7 @@ function isValidHttpUrl(string) {
   return url.protocol === "http:" || url.protocol === "https:";
 }
 
-function NewFactForm({ setFacts }) {
+function NewFactForm({ setFacts, setShowForm }) {
   const [text, setText] = useState("");
   const [source, setSource] = useState("http://example.com");
   const [category, setCategory] = useState("");
@@ -139,8 +141,12 @@ function NewFactForm({ setFacts }) {
         setText("");
         setSource("");
         setCategory("");  
+
         //close the form
+        setShowForm(false);
+
       };
+    }
 
       return (
         <form className="fact-form" onSubmit={handleSubmit}>
@@ -238,6 +244,6 @@ function NewFactForm({ setFacts }) {
       );
     }
   }
-}
+
 
 export default App;
