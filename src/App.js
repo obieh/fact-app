@@ -46,77 +46,6 @@ const initialFacts = [
   },
 ];
 
-
-function CategoryFilter() {
-  return (
-    <aside>
-      <ul>
-        <li className="category">
-          <button className="btn btn-all-categories">All</button>
-        </li>
-
-        {CATEGORIES.map((cat) => (
-          <li key={cat.name} className="category">
-            <button
-              className="btn btn-category"
-              style={{ backgroundColor: cat.color }}
-            >
-              {cat.name}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </aside>
-  );
-}
-
-
-
-function FactList() {
-  // Temporary data until we fetch from Supabase
-  const facts = initialFacts;
-
-  return (
-    <section>
-      <ul className="facts-list">
-        {facts.map((fact) => (
-          <Fact key={fact.id} fact={fact} />
-        ))}
-      </ul>
-    </section>
-  );
-}
-
-
-function Fact({ fact }) {
-  return (
-    <li className="fact">
-      <p>
-        {fact.text}
-        <a className="source" target="blank" href={fact.source}>
-          (Source)
-        </a>
-        <span
-          className="tag"
-          style={{
-            backgroundColor: CATEGORIES.find(
-              (cat) => cat.name === fact.category,
-            ).color,
-          }}
-        >
-          {fact.category}
-        </span>
-      </p>
-      <div className="vote-buttons">
-        <button>👍{fact.votesInteresting}</button>
-        <button>🤯{fact.votesMindblowing}</button>
-        <button>⛔️{fact.votesFalse}</button>
-      </div>
-    </li>
-  );
-}
-
-
 function App() {
   const [showForm, setShowForm] = useState(false);
 
@@ -176,7 +105,7 @@ function NewFactForm() {
 
     e.preventDefault();
     //check if data is valid. If so, create a new fact and add it to the UI, and clear the input fields
-     if(text && source && category) {
+     if(text && source && category && textLength <= 300){ {
     //Create a new fact object
 
     //add the new fact to the UI: add the fact to state
@@ -216,9 +145,71 @@ function NewFactForm() {
   );
 }
 
+function CategoryFilter() {
+  return (
+    <aside>
+      <ul>
+        <li className="category">
+          <button className="btn btn-all-categories">All</button>
+        </li>
 
+        {CATEGORIES.map((cat) => (
+          <li key={cat.name} className="category">
+            <button
+              className="btn btn-category"
+              style={{ backgroundColor: cat.color }}
+            >
+              {cat.name}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
+}
 
+function FactList() {
+  // Temporary data until we fetch from Supabase
+  const facts = initialFacts;
 
+  return (
+    <section>
+      <ul className="facts-list">
+        {facts.map((fact) => (
+          <Fact key={fact.id} fact={fact} />
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function Fact({ fact }) {
+  return (
+    <li className="fact">
+      <p>
+        {fact.text}
+        <a className="source" target="blank" href={fact.source}>
+          (Source)
+        </a>
+        <span
+          className="tag"
+          style={{
+            backgroundColor: CATEGORIES.find(
+              (cat) => cat.name === fact.category,
+            ).color,
+          }}
+        >
+          {fact.category}
+        </span>
+      </p>
+      <div className="vote-buttons">
+        <button>👍{fact.votesInteresting}</button>
+        <button>🤯{fact.votesMindblowing}</button>
+        <button>⛔️{fact.votesFalse}</button>
+      </div>
+    </li>
+  );
+}}
 }
 
 export default App;
