@@ -94,9 +94,27 @@ const CATEGORIES = [
   { name: "news", color: "#8b5cf6" },
 ];
 
+
+// Source - https://stackoverflow.com/a/43467144
+// Posted by Pavlo, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-03-10, License - CC BY-SA 4.0
+
+function isValidHttpUrl(string) {
+  let url;
+  
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;  
+  }
+
+  return url.protocol === "http:" || url.protocol === "https:";
+}
+
+
 function NewFactForm() {
   const [text, setText] = useState("");
-  const [source, setSource] = useState("");
+  const [source, setSource] = useState("http://example.com");
   const [category, setCategory] = useState("");
   const textLength = text.length;
 
@@ -105,7 +123,8 @@ function NewFactForm() {
 
     e.preventDefault();
     //check if data is valid. If so, create a new fact and add it to the UI, and clear the input fields
-     if(text && source && category && textLength <= 300){ {
+     if(text && isValidHttpUrl(source) && category && textLength <= 300){ 
+      console.log("valid data");
     //Create a new fact object
 
     //add the new fact to the UI: add the fact to state
@@ -210,6 +229,6 @@ function Fact({ fact }) {
     </li>
   );
 }}
-}
+
 
 export default App;
