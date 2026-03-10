@@ -101,9 +101,14 @@ function NewFactForm() {
   const textLength = text.length;
 
   function handleSubmit(e) {
-    //
+    //prevent browser reload
 
     e.preventDefault();
+    //check if data is valid. If so, create a new fact and add it to the UI, and clear the input fields
+
+    //Create a new fact object
+
+    //add the new fact to the UI: add the fact to state
   }
 
   return (
