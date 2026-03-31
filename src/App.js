@@ -38,7 +38,7 @@ function App() {
 
         if (!error) setFacts(facts);
         else alert("There was a problem getting data");
-        console.log(error); // ...existing code...
+        console.log(error); // Log the error for debugging purposes
 
         function Fact({ fact, setFacts }) {
           const [isUpdating, setIsUpdating] = useState(false);
